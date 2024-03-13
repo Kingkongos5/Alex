@@ -1,0 +1,59 @@
+
+// Function ======================================
+
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+@function em($px, $del) {
+	$result: math.div($px, $del) + em;
+	@return $result;
+}
+
+// Base__var =====================================
+
+$maxWidth: 1200;
+$maxWidthContainer: 1200;
+$minWidth: 320;
+$padding: 15;
+
+$background: #fff;
+$page-color: #656d72;;
+$color: #232e35;
+$purple: #7E74F1;
+
+$font-size: rem(16);
+$font-weight: 500;
+$font-family: "Inter";
+
+// Mixin =========================================
+
+@mixin adClamp($property, $maxSize, $minSize, $maxWidth: $maxWidth, $minWidth: $minWidth) {
+
+   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+   $yIntersection: -$minWidth * $slope + $minSize;
+   $flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+   
+   $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($maxSize) ")"};
+   
+   @if ($minSize > $maxSize) {
+      $propertyValue: #{"clamp(" rem($maxSize) "," $flyValue "," rem($minSize) ")"};
+   }
+
+   #{$property}: #{$propertyValue};
+}
+
+@mixin Clamp($maxSize, $minSize, $maxWidth: $maxWidth, $minWidth: $minWidth) {
+
+   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+   $yIntersection: -$minWidth * $slope + $minSize;
+   $flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+   
+   $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($maxSize) ")"};
+   
+   @if ($minSize > $maxSize) {
+      $propertyValue: #{"clamp(" rem($maxSize) "," $flyValue "," rem($minSize) ")"};
+   }
+
+   #{$propertyValue}: #{$propertyValue};
+}

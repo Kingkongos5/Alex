@@ -1,0 +1,209 @@
+
+
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1;
+   background: rgba(255, 255, 255, 0.6);
+   &__container {
+      padding: clamp( 1.25rem , 0.7727272727rem  +  2.3863636364vw , 2.5625rem ) 15px;
+      @include adClamp("height", 123, 83);
+   }
+
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+   }
+
+   &__logo {
+      transition: all .3s linear 0s;
+      &:hover{
+         transform: translate(0px,-3px);
+         transition: all .3s linear 0s;
+      }
+   }
+
+   &__nav {
+   }
+
+   &__active{
+      display: flex;
+      align-items: center;
+      background: transparent;
+   }
+
+   &__btn {
+      padding: 1rem 1.5rem;
+      border: 1px solid rgb(241, 241, 241);
+      border-radius: 8px;
+      transition: all .5s ease 0s;
+      &:hover{
+         transition: all .5s ease 0s;
+         background: $purple;
+         border: none;
+         text-shadow: -1px -1px 1px #000;
+         color: #fff;
+         box-shadow: 2px 2px 1px #6a61c7;
+      }
+      @media(max-width:767.98px){
+         margin-right: 2.8125rem;
+         position: relative;
+         z-index: 3;
+         background: #000;
+         color: #fff;
+      }
+   }
+
+   &__burger {
+      display: none;
+      @media(max-width:767.98px){
+         display: inline-block;
+         position: relative;
+         z-index: 3;
+         &:before,&:after{
+            content: '';
+            position: absolute;
+            width: 2rem;
+            height: 0.1563rem;
+            left: -2rem;
+            top: 0;
+            background: #000;
+            transition: all .3s ease 0s;
+            display: inline-block;
+            cursor: pointer;
+         }
+         &:before{
+            top: -0.625rem;
+         }
+         &:after{
+            top: 0.625rem;
+         }
+         span{
+            position: absolute;
+            width: 2rem;
+            height: 0.1812rem;
+            left: -2rem;
+            top: 0;
+            background: #000;
+            transition: all .45s ease 0s;
+         }
+      }
+   }
+
+   &__burger.active{
+      &:before{
+         rotate: -45deg;
+         top: 0;
+         transition: all .3s ease 0s;
+      }
+      &:after{
+         rotate: 45deg;
+         top: 0;
+         transition: all .3s ease 0s;
+      }
+      span{
+         transform: translateX(100%);
+         transition: all .45s ease 0s;
+         background: transparent;
+         scale: 0.3;
+      }
+   }
+}
+.nav {
+
+   &__items {
+      display: flex;
+      @include adClamp("gap", 56, 28, 1200, 768);
+      flex-wrap: wrap;
+      @media(max-width:767.98px){
+         position: fixed;
+         width: 0%;
+         height: 100%;
+         right: 0;
+         top: 0;
+         background: #c3c3c3;
+         transition: all .3s ease 0s;
+         padding-top: 5.625rem;
+         overflow: auto;
+         display: flex;
+         flex-direction: column;
+         row-gap: 40px;
+         z-index: 1;
+         flex-wrap: nowrap;
+         &:before{
+            content: '';
+            position: fixed;
+            width: 0%;
+            height: 0;
+            right: 0;
+            top: 0;
+            background: #cbc8e9;
+            z-index: 2;
+            box-shadow: 15px 0px 15px #cbc8e9;
+            border-left: 1px solid $color;
+            transition: all .3s ease 0s;
+         }
+      }
+   }
+
+   &__items.active{
+      @media(max-width:767.98px){
+         position: fixed;
+         width: 55%;
+         height: 100%;
+         right: 0;
+         top: 0;
+         background: $purple;
+         transition: all 0.3s ease 0s;
+         @include adClamp("padding-top", 130, 90, 768, 320);
+         padding-right: 0.9375rem;
+         overflow: auto;
+         display: flex;
+         flex-direction: column;
+         row-gap: 3.125rem;
+         border-left: 1px solid $color;
+         flex-wrap: nowrap;
+         &:before{
+            width: 55%;
+            @include adClamp("height", 100, 83, 768, 320);
+         }
+      }
+   }
+
+   &__item {
+      @media(max-width:767.98px){
+         text-align: right;
+      }
+   }
+
+   &__link {
+      position: relative;
+      &:before{
+         content: '';
+         position: absolute;
+         width: 0%;
+         height: 0.0938rem;
+         left: 50%;
+         bottom: -0.125rem;
+         background: #000;
+         transition: all .3s ease 0s;
+      }
+      &:hover:before{
+         transition: all .3s ease 0s;
+         width: 100%;
+         left: 0;
+      }
+      @media(max-width:767.98px){
+         color: #fff;
+         @include adClamp("font-size", 36, 18, 768, 320);
+         &:hover{
+            color: rgba(0, 0, 0,0.6);
+            transition: all .3s ease 0s;
+         }
+      }
+   }
+}
