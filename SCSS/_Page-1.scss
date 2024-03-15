@@ -1,5 +1,138 @@
-
-
-.main{
+.main {
    flex: 1 1 auto;
+}
+.page1 {
+}
+.alex {
+   &__container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      @include adClamp("padding-top", 241, 83);
+      @include adClamp("padding-bottom", 144, 75);
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+         gap: 25px;
+      }
+   }
+
+   &__content {
+      flex: 0 1 50%;
+   }
+
+   &__title {
+      font-size: 2.75rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+      @include adClamp("margin-bottom", 35, 20);
+   }
+
+   &__text {
+      color: $color;
+      font-weight: 400;
+      line-height: 2;
+      letter-spacing: 0rem;
+   }
+
+   &__social {
+      @include adClamp("margin-top", 40, 20);
+   }
+
+   &__social-link {
+      position: relative;
+      top: 0;
+      font-family: "Plus Jakarta Sans";
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: 700;
+      transition: all 0.3s ease 0s;
+      &:not(:last-child) {
+         @include adClamp("margin-right", 35, 20);
+      }
+      &:nth-child(1):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #e86c06;
+      }
+      &:nth-child(2):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         font-size: 21px;
+      }
+      &:nth-child(3):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #0699e8;
+      }
+      &:nth-child(4):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #066ce8;
+      }
+   }
+
+   &__images {
+      display: flex;
+      flex: 0 1 50%;
+      justify-content: end;
+      position: relative;
+      &:after {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         right: 0;
+         top: 0;
+         background: url(../../IMG/Alex/lines.svg) right top no-repeat;
+      }
+      &:before {
+         content: "";
+         position: absolute;
+         width: 56.833333%; /* 341/600 */
+         min-width: 270px;
+         height: 100%;
+         right: 0;
+         top: 0;
+         background: $purple;
+         border-radius: 16px;
+         rotate: -9.55deg;
+         z-index: -1;
+         animation: rotate 1.5s ease-in infinite alternate;
+         @keyframes rotate {
+            from {
+               rotate: -9.55deg;
+            }
+            to {
+               rotate: 9.55deg;
+            }
+         }
+         @media (max-width: 467.98px) {
+            rotate: -3deg;
+            @keyframes rotate {
+               from {
+                  rotate: -3deg;
+               }
+               to {
+                  rotate: 3deg;
+               }
+            }
+         }
+      }
+      img {
+         padding: 6.5625rem 5.0625rem 0px 0px;
+         border-radius: 16px;
+         background: rgb(234, 230, 254);
+         @media (max-width: 767.98px) {
+            max-width: 100%;
+         }
+      }
+   }
+   &__img {
+   }
+}
+.alex-content {
 }

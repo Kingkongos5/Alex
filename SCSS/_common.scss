@@ -18,15 +18,14 @@
 
 @font-face {
    font-family: 'icons';
-   src:
-   url('../../fonts/icons.woff') format('woff');
+   src: url('../../fonts/icons.woff') format('woff');
    font-weight: normal;
    font-style: normal;
    font-display: block;
 }
 
 [class^="_icon-"]::before, [class*=" _icon-"]::before {
-   // use !important to prevent issues with browser extensions that change fonts
+   /* use !important to prevent issues with browser extensions that change fonts */
    font-family: 'icons' !important;
    speak: never;
    font-style: normal;
@@ -34,29 +33,33 @@
    font-variant: normal;
    text-transform: none;
    line-height: 1;
-   // Better Font Rendering ===========
+ 
+   /* Better Font Rendering =========== */
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-}
-
-   ._icon-copy:before {
+ }
+ 
+ ._icon-prev:before {
+   content: "\e906";
+ }
+ ._icon-copy:before {
    content: "\e900";
-}
-   ._icon-git:before {
+ }
+ ._icon-git:before {
    content: "\e901";
-}
-   ._icon-inst:before {
+ }
+ ._icon-inst:before {
    content: "\e902";
-}
-   ._icon-link:before {
+ }
+ ._icon-link:before {
    content: "\e903";
-}
-   ._icon-next:before {
+ }
+ ._icon-next:before {
    content: "\e904";
-}
-   ._icon-X:before {
+ }
+ ._icon-X:before {
    content: "\e905";
-}
+ }
 
 
 // Common ============================================
@@ -76,7 +79,7 @@
          position: absolute;
          width: 1rem;
          height: 0.125rem;
-         left: -2rem;
+         left: -0.0rem;
          top: 50%;
          transform: translate(0,-50%);
          background: rgb(217, 217, 217);
@@ -89,6 +92,9 @@
       font-weight: 700;
       line-height: 1.731;
       letter-spacing: 0;
+      span{
+         color: $purple;
+      }
    }
 
 }
