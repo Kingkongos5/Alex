@@ -34,4 +34,4 @@ const observ = new IntersectionObserver((entries) => {
 
 
 
-document.querySelectorAll('.page2').forEach((page) => {observ.observe(page)})
+document.querySelectorAll('.page3').forEach((page) => {observ.observe(page)})
