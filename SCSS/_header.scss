@@ -67,13 +67,14 @@
          z-index: 3;
          width: 16px;
          height: 32px;
-         padding-left: 16px;
+         padding: 15px;
+         margin-left: -30px;
          &:before,&:after{
             content: '';
             position: absolute;
             width: 2rem;
             height: 0.1563rem;
-            left: -2rem;
+            left: 0px;
             top: 0;
             background: #000;
             transition: all .3s ease 0s;
@@ -90,7 +91,7 @@
             position: absolute;
             width: 2rem;
             height: 0.1563rem;
-            left: -2rem;
+            left: 0px;
             top: 15px;
             background: #000;
             transition: all .45s ease 0s;
@@ -120,7 +121,7 @@
 
 .header.active{
    transition: all .7s ease 0s;
-   top: -125px;
+   top: -7.8125rem;
 }
 
 .nav {
