@@ -1622,7 +1622,12 @@ button.swiper-pagination-bullet {
 .exp__company-name.active img {
   transition: all 0.8s ease 0s;
   opacity: 1;
-  rotate: 90deg;
+  rotate: 0deg;
+}
+@media (max-width: 991.98px) {
+  .exp__company-name.active img {
+    rotate: 90deg;
+  }
 }
 .exp__company-name.active:hover img {
   opacity: 1;
