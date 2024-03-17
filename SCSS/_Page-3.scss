@@ -1,90 +1,152 @@
 .page3 {
 }
 .works {
+   &__container {
+      @include adClamp("padding-top", 104, 65);
+      @include adClamp("padding-bottom", 176, 75);
+   }
 
-		&__container {
-         @include adClamp("padding-top", 104, 65);
-         @include adClamp("padding-bottom", 176, 75);
-		}
+   &__beggining {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include adClamp("margin-bottom", 144, 30);
+      @media (max-width: 467.98px) {
+         flex-direction: column;
+      }
+   }
 
-		&__beggining {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         @include adClamp("margin-bottom", 144, 72);
-		}
+   &__title {
+      @include adClamp("font-size", 44, 30);
+      @media (max-width: 767.98px) {
+         margin-bottom: 15px;
+      }
+   }
 
-		&__controls {
-         display: flex;
-         align-items: center;
-         gap: 1rem;
-		}
+   &__controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+   }
 
-      &__arrow{
-         width: 2.5rem;
-         height: 2.5rem;
-         border-radius: 1rem;
+   &__arrow {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 1rem;
+      background: rgb(234, 230, 254);
+      font-size: 0.75rem;
+      transition: all 0.3s ease 0s;
+      &:hover {
+         transition: all 0.3s ease 0s;
+         background: rgb(209, 200, 253);
+      }
+      &.swiper-button-disabled{
+         opacity: 0.6;
+         cursor: default;
          background: rgb(234, 230, 254);
-         font-size: 0.75rem;
-         transition: all .3s ease 0s;
-         &:hover{
-            transition: all .3s ease 0s;
-            background: rgb(209, 200, 253);
-         }
       }
+   }
 
-		&__prev {
-		}
+   &__prev {
+      
+   }
 
-		&__next {
-		}
+   &__next {
+   }
 
-      &__slider {
-      }
-   
-      &__wrapper {
-      }
-   
-      &__slide {
-         display: flex;
-         @include adClamp("gap", 56, 28);
-      }
+   &__slider {
+   }
+
+   &__wrapper {
+      display: flex;
+      max-width: 100%;
+   }
+
+   &__slide {
+   }
+}
+
+.swiper {
+   position: relative;
+   z-index: 0 !important;
 }
 
 .item-works {
-   position: relative;
+   border-radius: 0.5rem;
+   border: 1px solid #f5f5f5;
+   overflow: hidden;
    display: flex;
    flex-direction: column;
+   flex-wrap: wrap;
+   &:hover {
+      img {
+         transition: all 0.8s ease 0s;
+         opacity: 1;
+         scale: (1.05);
+      }
+      @media(min-width:767.98px){
+         .item-works__name::before {
+         transition: all 0.8s ease 0s;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+         border-radius: 15px;
+      }
+      .item-works__name{
+         a{
+            transition: all .8s ease 0s;
+            color: #fff;
+         }
+      }}
+   }
+
    &__images {
-      img{
+      img {
+         margin-bottom: -30.778947%; /* 114/361 */
          opacity: 0.6;
          max-width: 100%;
+         transition: all 0.8s ease 0s;
       }
    }
 
    &__content {
-      padding: 24px;
-      position: absolute;
-      width: 100%;
-      height: 6.6875rem; /* 107px/361 */
-      left: 0;
-      bottom: -0.0625rem;
-      z-index: 1;
       border-bottom: 1px solid rgb(245, 245, 245);
       border-left: 1px solid rgb(245, 245, 245);
       border-right: 1px solid rgb(245, 245, 245);
-      border-radius: 0px 0px 8px 8px;
-      /* White */
       background: rgb(255, 255, 255);
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+      border-radius: 0px 0px 0.35rem 0.35rem;
    }
 
    &__name {
+      padding: 5px;
       color: rgb(35, 46, 53);
       font-family: "Plus Jakarta Sans";
       font-weight: 500;
       line-height: 1.25;
       letter-spacing: 0%;
       margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      transition: all 0.8s ease 0s;
+      @media(min-width:767.98px){
+         &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 0%;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: $purple;
+            border-radius: 15px;
+            transition: all 0.8s ease 0s;
+            z-index: -1;
+         }
+      }
    }
 
    &__footer {
@@ -94,13 +156,14 @@
 
    &__category {
       margin-right: 1rem;
-      padding: 0.25rem 0.5rem;
-      border: 1px solid rgb(241, 241, 241);
-      border-radius: 0.25rem;
    }
 
    &__link {
+      font-size: 18px;
+      transition: all .3s ease 0s;
+      &:hover{
+         transition: all .3s ease 0s;
+         opacity: 0.4;
+      }
    }
 }
-
-

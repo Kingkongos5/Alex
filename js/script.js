@@ -2,7 +2,7 @@
 // Header ==============================================
 
 const header = document.querySelector('.header')
-const burger = document.querySelector('.header__burger');
+const burger = document.querySelector('.header__active');
 const nav = document.querySelector('.nav__items');
 
 addEventListener("click", openBurger);
@@ -35,3 +35,5 @@ const observ = new IntersectionObserver((entries) => {
 
 
 document.querySelectorAll('.page3').forEach((page) => {observ.observe(page)})
+
+

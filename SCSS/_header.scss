@@ -35,6 +35,26 @@
       display: flex;
       align-items: center;
       background: transparent;
+      margin-top: 0;
+      transition: all .7s ease 0s;
+      &.active .header__burger{
+         &:before{
+            rotate: -45deg;
+            top: 1rem;
+            transition: all .3s ease 0s;
+         }
+         &:after{
+            rotate: 45deg;
+            top: 1rem;
+            transition: all .3s ease 0s;
+         }
+         span{
+            transform: translateX(100%);
+            transition: all .45s ease 0s;
+            background: transparent;
+            scale: 0.3;
+         }
+      }
    }
 
    &__btn {
@@ -65,9 +85,9 @@
          display: inline-block;
          position: relative;
          z-index: 3;
-         width: 16px;
+         width: 32px;
          height: 32px;
-         padding: 15px;
+         padding: 15px 25px;
          margin-left: -30px;
          &:before,&:after{
             content: '';
@@ -121,8 +141,17 @@
 
 .header.active{
    transition: all .7s ease 0s;
-   top: -7.8125rem;
+   top: -8.2125rem;
+   & .header__active.active{
+      transition: all .7s ease 0s;
+      margin-top: 7.8125rem;
+   }
+   & .header__logo{
+      transition: all .7s ease 0s;
+      opacity: 0;
+   }
 }
+
 
 .nav {
 
@@ -178,6 +207,7 @@
          row-gap: 3.125rem;
          border-left: 1px solid $color;
          flex-wrap: nowrap;
+         z-index: 1;
          &:before{
             width: 55%;
             @include adClamp("height", 100, 83, 768, 320);
@@ -201,7 +231,7 @@
          height: 0.0938rem;
          left: 50%;
          bottom: 0.125rem;
-         background: #000;
+         background: $purple;
          transition: all .3s ease 0s;
          opacity: 0;
       }
@@ -215,7 +245,7 @@
       
       @media(max-width:767.98px){
          color: #fff;
-         @include adClamp("font-size", 36, 18, 768, 320);
+         @include adClamp("font-size", 36, 24, 768, 320);
          &:hover{
             color: rgba(0, 0, 0,0.6);
             transition: all .3s ease 0s;
