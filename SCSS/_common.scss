@@ -90,8 +90,9 @@
       font-weight: 700;
       line-height: 1.731;
       letter-spacing: 0;
+      @include adClamp("font-size", 44, 30);
       span {
-         color: #6d61f0;
+         color: $purple;
       }
    }
 }
@@ -103,7 +104,7 @@
    transition: all .3s ease 0s;
    &:hover{
       transition: all .3s ease 0s;
-      background: $purple;
+      background: #968eea;
       color: #fff;
    }
 }

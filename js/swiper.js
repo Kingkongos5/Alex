@@ -24,21 +24,27 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.works__next',
       prevEl: '.works__prev',
    },
-   spaceBetween: 56,
-   slidesPerView: 3,
-   slidesPerGroup: 2,
    speed: 800,
    breakpoints: {
       320: {
-         slidesPerView: 1,
-         slidesPerGroup: 1
+         slidesPerView: 1.2,
+         autoHeight: true,
+         slidesPerGroup: 1,
+         spaceBetween: 20,
       },
-      663: {
+      600: {
          slidesPerView: 2,
          slidesPerGroup: 1,
+         spaceBetween: 20,
       },
-      991: {
+      900: {
          slidesPerView: 3,
          slidesPerGroup: 2,
+         spaceBetween: 20,
+      },
+      1024: {
+         slidesPerView: 3,
+         slidesPerGroup: 2,
+         spaceBetween: 56,
       }
    }});

@@ -1,0 +1,228 @@
+.page4 {
+   background: $twogeneral-color;
+   @include adClamp("padding-top", 107, 60);
+   @include adClamp("padding-bottom", 111, 60);
+}
+.exp {
+   &__container {
+      display: flex;
+      align-items: center;
+      @include adClamp("gap", 144, 35, 1200, 768);
+      @media(max-width:991.98px){
+         flex-direction: column;
+      }
+   }
+
+   &__start {
+      flex: 0 1 35.083333%; /* 421/1200 */
+      display: flex;
+      flex-direction: column;
+      @include adClamp("gap", 80, 20, 1200, 768);
+      @media(max-width:767.98px){
+         flex: 0 1 100%;
+      }
+   }
+
+   &__title {
+      @include adClamp("font-size", 36, 24);
+   }
+
+   &__company {
+      @media(max-width:991.98px){
+         display: flex;
+         gap: 15px;
+         row-gap: 25px;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         justify-content: center;
+      }
+   }
+
+   &__company-name {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.6s ease 0s;
+      @media(max-width:713.98px){
+         width: 48%;
+      }
+      @media(max-width:467.98px){
+         width: 100%;
+      }
+      img {
+         transition: all 0.6s ease 0s;
+         position: relative;
+         z-index: 1;
+         margin-right: 32px;
+         opacity: 0;
+         rotate: 180deg;
+         @media(max-width:991.98px){rotate: 270deg;}
+      }
+      button {
+         color: $color;
+         line-height: 1.187;
+         @include adClamp("padding-top", 14, 14, 768, 320);
+         @include adClamp("padding-right", 32, 24, 768, 320);
+         @include adClamp("padding-bottom", 14, 14, 768, 320);
+         @include adClamp("padding-left", 32, 24, 768, 320);
+         font-weight: 400;
+      }
+      &.active {
+         transition: all 0.3s ease 0s;
+         border-radius: 4px;
+         position: relative;
+         img {
+            transition: all 0.8s ease 0s;
+            opacity: 1;
+            rotate: 90deg;
+         }
+         &:hover {
+            img {
+               opacity: 1;
+            }
+         }
+         button {
+            color: $purple;
+            font-weight: 500;
+            z-index: 1;
+         }
+         &:before {
+            content: "";
+            background: #fff;
+            position: absolute;
+            transition: all 0.3s ease 0s;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0px;
+            z-index: 0;
+         }
+      }
+      &:hover {
+         transition: all 0.6s ease 0s;
+         background: rgb(255, 255, 255, 0.6);
+         img {
+            opacity: 0.4;
+         }
+      }
+      @media(any-hover: none){
+         transition: all 0.6s ease 0s;
+         background: rgb(255, 255, 255, 0.6);
+         img {
+            opacity: 0.4;
+         }
+      }
+   }
+
+   &__experiens {
+      flex: 0 1 64.916667%; /* 779/1200 */
+   }
+}
+.company-body {
+
+   &__content {
+      opacity: 0;
+      height: 0;
+      transform: translate(-15%,0);
+      &.active{
+         opacity: 1;
+         height: 100%;
+         transition: all .7s ease 0.1s;
+         transform: translate(0px,0px);
+         & .company-body__did-it{
+            transform: translate(0px,0px);
+            opacity: 1;
+            &:nth-child(1){
+               transition: all .3s ease 0;
+            }
+            &:nth-child(2){
+               transition: all .3s ease 0.2s;
+            }
+            &:nth-child(3){
+               transition: all .3s ease 0.4s;
+            }
+            &:nth-child(4){
+               transition: all .3s ease 0.6s;
+            }
+         }
+      }
+   }
+
+   &__about {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+
+   &__position {
+      color: $color;
+      font-family: "Plus Jakarta Sans";
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.27;
+      letter-spacing: 0;
+      span {
+         text-decoration: underline;
+         transition: all 0.3s ease 0s;
+         &:hover {
+            transition: all 0.3s ease 0s;
+            color: $purple;
+         }
+      }
+   }
+
+   &__place {
+      color: rgb(101, 109, 114);
+      font-size: 0.875rem;
+      line-height: 1.214;
+      letter-spacing: 0rem;
+   }
+
+   &__time {
+      color: rgb(101, 109, 114);
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.7142;
+      letter-spacing: 0px;
+   }
+
+   &__category {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+   }
+
+   &__did {
+      display: flex;
+      flex-direction: column;
+      gap: 1.0188rem;
+      border-top: 1px solid rgb(241, 241, 241);
+   }
+
+   &__did-it {
+      color: rgb(101, 109, 114);
+      line-height: 1.1875;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      position: relative;
+      padding-left: 2.125rem;
+      transform: translate(10%,50%);
+      opacity: 0;
+      &:first-child {
+         margin-top: 2.0625rem;
+      }
+      &:before {
+         content: "";
+         position: absolute;
+         width: 1rem;
+         height: 0.125rem;
+         left: -0rem;
+         top: 50%;
+         transform: translate(0, -50%);
+         background: rgb(217, 217, 217);
+      }
+   }
+}
+.category {
+}
