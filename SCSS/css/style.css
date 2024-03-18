@@ -1949,7 +1949,7 @@ button.swiper-pagination-bullet {
   height: 100%;
   left: 0;
   top: 1.09375%; /* 3.5px/320 */
-  background: url(../../img/Skills/way.svg) 0 0 no-repeat;
+  background: url(../../IMG/Skills/way.svg) 0 0 no-repeat;
 }
 .skills-myway__item {
   margin-left: 2.25rem;
