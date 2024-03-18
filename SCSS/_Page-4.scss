@@ -8,7 +8,7 @@
       display: flex;
       align-items: center;
       @include adClamp("gap", 144, 35, 1200, 768);
-      @media(max-width:991.98px){
+      @media(max-width:767.98px){
          flex-direction: column;
       }
    }
@@ -28,13 +28,16 @@
    }
 
    &__company {
-      @media(max-width:991.98px){
+      @media(max-width:767.98px){
          display: flex;
          gap: 15px;
          row-gap: 25px;
          flex-wrap: wrap;
          justify-content: space-between;
          justify-content: center;
+      }
+      @media(max-width:467.98px){
+         row-gap: 5px;
       }
    }
 
@@ -71,10 +74,14 @@
          transition: all 0.3s ease 0s;
          border-radius: 4px;
          position: relative;
+
          img {
             transition: all 0.8s ease 0s;
             opacity: 1;
-            rotate: 90deg;
+            rotate: 0deg;
+            @media(max-width:991.98px){
+               rotate: 90deg;
+            }
          }
          &:hover {
             img {
@@ -112,6 +119,14 @@
             opacity: 0.4;
          }
       }
+      @media(max-width: 767.98px){
+         transition: all 0.6s ease 0s;
+         background: rgb(255, 255, 255, 0.6);
+         img {
+            opacity: 0.4;
+         }
+      }
+
    }
 
    &__experiens {
@@ -119,6 +134,7 @@
    }
 }
 .company-body {
+   @include adClamp("padding-top", 32, 0);
 
    &__content {
       opacity: 0;
@@ -133,16 +149,16 @@
             transform: translate(0px,0px);
             opacity: 1;
             &:nth-child(1){
-               transition: all .3s ease 0;
-            }
-            &:nth-child(2){
                transition: all .3s ease 0.2s;
             }
-            &:nth-child(3){
+            &:nth-child(2){
                transition: all .3s ease 0.4s;
             }
-            &:nth-child(4){
+            &:nth-child(3){
                transition: all .3s ease 0.6s;
+            }
+            &:nth-child(4){
+               transition: all .3s ease 0.8s;
             }
          }
       }
@@ -218,7 +234,7 @@
          width: 1rem;
          height: 0.125rem;
          left: -0rem;
-         top: 50%;
+         top: 0.625rem;
          transform: translate(0, -50%);
          background: rgb(217, 217, 217);
       }

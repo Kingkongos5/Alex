@@ -1,0 +1,81 @@
+.blog {
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include adClamp("padding-top", 145, 65);
+      @include adClamp("padding-bottom", 181, 75);
+   }
+
+   &__posts {
+      @include adClamp("margin-top", 144, 30);
+   }
+}
+.blog-post {
+
+   &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include adClamp("gap", 40, 15);;
+   }
+
+   &__item {
+      max-width: 361px;
+      border-bottom: 1px solid rgb(241, 241, 241);
+      border-left: 1px solid rgb(241, 241, 241);
+      border-right: 1px solid rgb(241, 241, 241);
+      border-radius: 8px 8px 8px 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__img {
+      img{
+         max-width: 100%;
+      }
+   }
+
+   &__content {
+      flex: 1 1 100%;
+      padding: 1rem 1rem 0px 1rem;
+      overflow: hidden;
+   }
+
+   &__name {
+      color: $color;
+      font-family: "Plus Jakarta Sans";
+      @include adClamp("font-size", 16, 14, 1200, 991);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0px;
+      margin-bottom: 1rem;
+   }
+
+   &__date {
+      margin-bottom: 1rem;
+   }
+
+   &__text {
+      max-height: 96px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $page-color;
+      @include adClamp("font-size", 16, 12, 1200, 991);
+      line-height: 2;
+      letter-spacing: 0;
+   }
+
+   &__continue {
+      @include adClamp("padding-top", 42, 32,1200, 768);
+      @include adClamp("padding-bottom", 24, 16,1200, 768);
+      display: flex;
+      justify-content: center;
+      &:hover{
+         transition: all .3s ease 0s;
+         color: $purple;
+      }
+   }
+}

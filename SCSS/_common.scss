@@ -66,7 +66,7 @@
    flex-direction: column;
    gap: 0.5rem;
    &__info {
-      font-size: 0.75rem;
+      @include adClamp("font-size", 12, 10);
       line-height: 2;
       letter-spacing: em(7.5, 12);
       position: relative;
@@ -86,11 +86,10 @@
    &__title {
       color: $color;
       font-family: "Plus Jakarta Sans";
-      font-size: 2.25rem;
       font-weight: 700;
       line-height: 1.731;
       letter-spacing: 0;
-      @include adClamp("font-size", 44, 30);
+      @include adClamp("font-size", 36, 28);
       span {
          color: $purple;
       }
@@ -108,3 +107,15 @@
       color: #fff;
    }
 }
+
+.affiliation{
+   padding: 0.25rem 0.5rem;
+   color: $page-color;
+   font-size: 0.75rem;
+   font-weight: 500;
+   line-height: 1.25;
+   letter-spacing: 0;
+   border-radius: 4px;
+   background: rgb(251, 251, 251);
+   display: inline-block;
+   }

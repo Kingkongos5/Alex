@@ -1,0 +1,50 @@
+.footer {
+   @include adClamp("padding-top", 88, 22);
+   @include adClamp("padding-bottom", 88, 22);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   &__social{
+      margin-bottom: 1.5rem;
+      display: flex;
+      @include adClamp("gap", 32, 16);
+   }  
+   &__social-link {
+      position: relative;
+      top: 0;
+      font-size: 20px;
+      transition: all .3s ease 0s;
+      &:nth-child(1):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #e86c06;
+      }
+      &:nth-child(2):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+      }
+      &:nth-child(3):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #0699e8;
+      }
+      &:nth-child(4):hover {
+         transition: all 0.3s ease 0s;
+         position: relative;
+         top: -5px;
+         color: #066ce8;
+      }
+   }
+   &__copy{
+      display: block;
+      color: rgb(101, 109, 114);
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.21;
+   }
+}
+

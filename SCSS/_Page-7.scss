@@ -1,0 +1,143 @@
+.page7 {
+}
+.skills {
+   &__container {
+      display: flex;
+      flex-direction: column;
+      @include adClamp("padding-top", 105, 40);
+      @include adClamp("padding-bottom", 176, 75);
+   }
+
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      @include adClamp("margin-top", 72, 52);
+      @media (max-width: 767.98px) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+}
+.skills-myway {
+   flex: 0 1 27.083333%; /* 325/1200 */
+   &__items {
+      display: flex;
+      flex-direction: column;
+      @include adClamp("gap", 64, 24);
+      position: relative;
+      &:before {
+         content: "";
+         position: absolute;
+         width: 1rem;
+         height: 100%;
+         left: 0;
+         top: 1.09375%; /* 3.5px/320 */
+         background: url(../../img/Skills/way.svg) 0 0 no-repeat;
+      }
+   }
+
+   &__item {
+      margin-left: 2.25rem;
+   }
+
+   &__place {
+      margin-bottom: 0.625rem;
+      color: rgb(35, 46, 53);
+      font-family: "Plus Jakarta Sans";
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: 0px;
+   }
+
+   &__experience {
+      @include adClamp("margin-bottom", 24, 16);
+      color: rgb(101, 109, 114);
+      line-height: 1.2142;
+      letter-spacing: 0px;
+      font-size: 0.875rem;
+   }
+
+   &__date {
+      color: rgb(35, 46, 53);
+      font-weight: 500;
+      line-height: 1.2142;
+      letter-spacing: 0px;
+      font-size: 0.875rem;
+   }
+}
+.skills-static {
+   flex: 0 1 48.666667%; /* 584/1200 */
+   @include adClamp("margin-top", 35, 25);
+   &__text {
+      margin-bottom: 4rem;
+      color: rgb(101, 109, 114);
+      line-height: 2;
+   }
+
+   &__items {
+      display: flex;
+      flex-direction: column;
+      @include adClamp("gap", 40, 20);
+   }
+
+   &__item {
+   }
+
+   &__name {
+      color: rgb(35, 46, 53);
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.2142;
+      margin-bottom: 1rem;
+   }
+
+   &__value {
+      max-width: 34.4375rem;
+      height: 8px;
+      position: relative;
+      background: #F5F3FE;
+      border-radius: 2px;
+      overflow: hidden;
+      span{
+         position: absolute;
+         height: 0.5rem;
+         left: 0;
+         top: 0;
+         background: $purple;
+         overflow: hidden;
+         &:before,&:after{
+            content: '';
+            position: absolute;
+            width: 4rem;
+            height: 80%;
+            transform: skewY(-45deg);
+            left: 0%;
+            top: 0;
+            border-radius: 50%;
+            background: #aea9e7dc;
+            animation: translate 3s cubic-bezier(0.13, 0.56, 1, 0.38) infinite;
+            @keyframes translate{
+               from{
+                  left: -15%;
+               }
+               to{
+                  left: 100%;
+               }
+            }
+         }
+         &::after{
+            animation: translate 5s linear infinite;
+            @keyframes translate{
+               from{
+                  left: -15%;
+               }
+               to{
+                  left: 100%;
+               }
+            }
+         }
+      }
+   }
+}

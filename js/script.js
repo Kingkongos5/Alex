@@ -6,13 +6,6 @@ const burger = document.querySelector('.header__active');
 const nav = document.querySelector('.nav__items');
 const Tabsbtn = document.querySelector('.exp__company');
 
-const tabsOne = document.querySelector('.exp__company-name:nth-child(1)')
-const tabsTwo = document.querySelector('.exp__company-name:nth-child(2)')
-const tabsThree = document.querySelector('.exp__company-name:nth-child(3)')
-const tabsFour = document.querySelector('.exp__company-name:nth-child(4)')
-
-console.log(tabsOne);
-
 addEventListener("click", openBurger);
 Tabsbtn.addEventListener("click", tabsBtn);
 
@@ -31,6 +24,7 @@ function openBurger(e) {
 // Header - animation ==================================
 
 window.addEventListener("wheel", scrollHeader);
+window.addEventListener("click", activeHeader);
 
 function scrollHeader(e) {
    if (window.innerWidth >= 798.98) {
@@ -49,17 +43,18 @@ function scrollHeader(e) {
    }
 }
 
+function activeHeader(){
+   if (header.classList[1] == "active"){
+      header.classList.remove('active')
+   }
+}
+
+
+
+
 // Tabs ============================================
 
 function tabsBtn(e) {
-   /*if (e.target.closest('.exp__company')) {
-      const btn = document.querySelectorAll('.exp__company-name')
-      btn.forEach((active) => { active.classList.remove('active');})
-      e.target.classList.add('active')
-      e.target.classList.add('_icon-next')
-      console.log(456);
-      //console.log(document.querySelectorAll('.exp__company-name button'));
-   }*/
    if (e.target.classList[1] != 'active') {
       if (e.target.closest('.exp__company-name')) {
          const btn = document.querySelectorAll('.exp__company-name')
