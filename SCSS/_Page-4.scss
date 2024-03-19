@@ -59,6 +59,7 @@
          margin-right: 32px;
          opacity: 0;
          rotate: 180deg;
+         max-width: 8px;
          @media(max-width:991.98px){rotate: 270deg;}
       }
       button {

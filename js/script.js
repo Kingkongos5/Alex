@@ -21,35 +21,6 @@ function openBurger(e) {
    }
 }
 
-// Header - animation ==================================
-
-window.addEventListener("wheel", scrollHeader);
-window.addEventListener("click", activeHeader);
-
-function scrollHeader(e) {
-   if (window.innerWidth >= 798.98) {
-      // if mouse whell spins up header appears
-      if (e.deltaY < 0) {
-         if (header.classList[1] == 'active') {
-            header.classList.remove('active')
-         }
-      }
-      // if mouse whell spins down header removes
-      if (e.deltaY > 0) {
-         if (!(header.classList[1] == 'active')) {
-            header.classList.add('active')
-         }
-      }
-   }
-}
-
-function activeHeader(){
-   if (header.classList[1] == "active"){
-      header.classList.remove('active')
-   }
-}
-
-
 
 
 // Tabs ============================================
@@ -92,3 +63,117 @@ function tabsBtn(e) {
    }
 }
 
+// Forms =================================
+
+addEventListener("DOMContentLoaded", function () {
+   const form = document.getElementById('form')
+   form.addEventListener('submit', sendForm);
+
+   async function sendForm(e) {
+      e.preventDefault();
+
+      const btn = document.querySelector('.form__body-btn');
+      let error = formValidate(form);
+
+      if (error === 0) {
+         if (!btn.classList.contains('_submit')) {
+            btn.classList.add('_submit')
+            setTimeout(function () {
+               btn.classList.remove('_submit')
+            }, 1200);
+            setTimeout(function () {
+               btn.textContent = "Sent";
+            }, 400);
+            setTimeout(function () {
+               btn.textContent = "Send Message";
+               const text = document.querySelector('.form__body-textarea');
+               text.classList.add('_text');
+               setTimeout(function () {
+                  text.value = "";
+               }, 400);
+               setTimeout(function () {
+                  text.classList.remove('_text')
+               }, 800);
+            }, 1200);
+         }
+      } else {
+         if (!btn.classList.contains('_err')) {
+            btn.classList.add('_err')
+            setTimeout(function () {
+               btn.classList.remove('_err')
+            }, 1000);
+            setTimeout(function () {
+               btn.textContent = "Error";
+            }, 400);
+            setTimeout(function () {
+               btn.textContent = "Send Message"
+            }, 1200);
+         }
+      }
+   }
+
+   function formValidate(form) {
+      let error = 0;
+      let formReq = document.querySelectorAll('._req')
+      for (let index = 0; index < formReq.length; index++) {
+         const el = formReq[index];
+         formRemoveError(el)
+
+         if (el.classList.contains('_email')) {
+            if (emailTest(el)) {
+               formAddError(el);
+               error++
+            }
+         } else {
+            if (el.value === '') {
+               formAddError(el);
+               error++
+            }
+         }
+      }
+      return error;
+   }
+
+   function formAddError(el) {
+      el.classList.add('_error')
+      el.parentNode.classList.add('_error')
+   }
+   function formRemoveError(el) {
+      el.classList.remove('_error')
+      el.parentNode.classList.remove('_error')
+   }
+
+   function emailTest(el) {
+      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(el.value);
+   }
+
+});
+
+// Page Navigation and underline the menu items =======================
+
+const observ = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+         const items = document.querySelector('.nav__items');
+         const allA = items.querySelectorAll('a').forEach((link) => {
+            let href = link.getAttribute('href').split('#')[1];
+            link.addEventListener("click", function (e){
+               e.preventDefault();
+               let el = document.getElementById(`${href}`)
+               el.scrollIntoView( {behavior: 'smooth'})
+            })
+            link.parentNode.classList.remove('_underline');
+
+            if ((entry.target.id == href)) {
+               link.parentNode.classList.add('_underline')
+            }
+         })
+      }
+   });
+}, {
+   threshold: [0.2]
+})
+
+document.querySelectorAll('section').forEach((section) => {
+   observ.observe(section)
+});

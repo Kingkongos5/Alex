@@ -2,15 +2,82 @@
    background: $twogeneral-color;
 }
 .input {
-   padding: 1rem 0px 1rem 1.5rem;
+   padding: 1rem 1.5rem 1rem;
    border-radius: 8px;
    background: rgb(255, 255, 255);
    color: rgb(101, 109, 114);
    font-size: 0.875rem;
    line-height: 1.2142;
    border: 3px solid transparent;
-   &:focus{
+   &:focus {
       border: 3px solid #000;
+   }
+   transition: all 0.3s ease 0s;
+   &._error {
+      transition: all 0.3s ease 0s;
+      box-shadow: 0px 0px 0.3125rem red;
+      position: relative;
+      &:focus {
+         border: 3px solid red;
+      }
+      &:nth-child(1) {
+         animation: twitching 1s ease 1;
+         @keyframes twitching {
+            from {
+               transform: translateX(0px);
+            }
+            15% {
+               transform: translateX(-3px);
+            }
+            30% {
+               transform: translateX(3px);
+            }
+            45% {
+               transform: translateX(-3px);
+            }
+            60% {
+               transform: translateX(3px);
+            }
+            75% {
+               transform: translateX(-3px);
+            }
+            90% {
+               transform: translateX(3px);
+            }
+            to {
+               transform: translateX(0);
+            }
+         }
+      }
+      &:nth-child(2) {
+         animation: twitching 0.8s ease 1;
+         @keyframes twitching {
+            from {
+               transform: translateX(0px);
+            }
+            15% {
+               transform: translateX(-3px);
+            }
+            30% {
+               transform: translateX(3px);
+            }
+            45% {
+               transform: translateX(-3px);
+            }
+            60% {
+               transform: translateX(3px);
+            }
+            75% {
+               transform: translateX(-3px);
+            }
+            90% {
+               transform: translateX(3px);
+            }
+            to {
+               transform: translateX(0);
+            }
+         }
+      }
    }
 }
 .form {
@@ -23,9 +90,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @media(max-width:767.98px){
+      @media (max-width: 767.98px) {
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
          gap: 24px;
       }
    }
@@ -34,7 +101,7 @@
       display: flex;
       flex-direction: column;
       flex: 0 1 50%;
-      @media(max-width:767.98px){
+      @media (max-width: 767.98px) {
          width: 100%;
       }
    }
@@ -45,17 +112,50 @@
       background: rgb(126, 116, 241);
       padding: 1rem 1.5rem;
       color: #fff;
-      transition: all .3s ease 0s;
-      &:hover{
-         transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
+      min-height: 52.8px;
+      &:hover {
+         transition: all 0.3s ease 0s;
          background: rgb(96, 81, 255);
+      }
+      &._submit {
+         animation: bg 1s ease alternate;
+         @keyframes bg {
+            from {
+               background: rgb(126, 116, 241);
+            }
+            50% {
+               background: #5fd703;
+               font-size: 0;
+            }
+            to {
+               background: rgb(126, 116, 241);
+               font-size: 1rem;
+            }
+         }
+      }
+      &._err {
+         animation: bgerr 1s ease alternate;
+         @keyframes bgerr {
+            from {
+               background: rgb(126, 116, 241);
+            }
+            50% {
+               background: rgb(191, 26, 1);
+               font-size: 0;
+            }
+            to {
+               background: rgb(126, 116, 241);
+               font-size: 1rem;
+            }
+         }
       }
    }
 
    &__body-name {
       margin-bottom: 16px;
    }
-   
+
    &__body-email {
       @include adClamp("margin-bottom", 24, 18);
    }
@@ -63,8 +163,20 @@
    &__body-textarea {
       @include adClamp("margin-bottom", 48, 36);
       max-width: 100%;
-      min-height: 44.78673%; /* 189/422 */
-      resize: none;  
+      min-height: 11.8125rem;
+      resize: none;
+      &._text {
+         animation: text 0.8s ease alternate;
+         @keyframes text {
+            from {
+               
+            }
+            50%{font-size: 0;}
+            to {
+               font-size: 1rem;
+            }
+         }
+      }
    }
 
    &__contact {
@@ -76,7 +188,7 @@
       display: flex;
       flex-direction: column;
       @include adClamp("gap", 48, 32);
-      @media(max-width:767.98px){
+      @media (max-width: 767.98px) {
          flex-direction: row;
          flex-wrap: wrap;
       }
@@ -84,7 +196,13 @@
 
    &__item {
       display: flex;
-      gap: 1rem   ;
+      gap: 1rem;
+      &:hover {
+         transition: all 0.3s ease 0s;
+         a {
+            color: $purple;
+         }
+      }
    }
 
    &__img {
@@ -107,5 +225,6 @@
       color: rgb(101, 109, 114);
       font-size: 0.875rem;
       line-height: 1.714;
+      transition: all 0.3s ease 0s;
    }
 }

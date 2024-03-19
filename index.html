@@ -15,13 +15,26 @@
       <header class="header">
          <div class="header__container">
             <div class="header__content">
-               <a href="#main" class="header__logo"><img src="IMG/Alex/Logo.svg" alt=""></a>
+               <a href="#" class="header__logo"><img src="IMG/Alex/Logo.svg" alt=""></a>
                <nav class="header__nav nav">
                   <ul class="nav__items">
                      <li class="nav__item"><a href="#serv" class="nav__link">Services</a></li>
                      <li class="nav__item"><a href="#port" class="nav__link">Portfolios</a></li>
                      <li class="nav__item"><a href="#exp" class="nav__link">Experience</a></li>
                      <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+                     <li class="nav__pod-menu">
+                        <div class="nav__menu"><span></span></div>
+                        <div class="nav-submenu__content">
+                           <ul class="nav-submenu__items">
+                              <li class="nav-submenu__item"><a href="#clients"
+                                    class="nav-submenu__link nav__link">Clients</a></li>
+                              <li class="nav-submenu__item"><a href="#skills"
+                                    class="nav-submenu__link nav__link">Skills</a></li>
+                              <li class="nav-submenu__item"><a href="#contact"
+                                    class="nav-submenu__link nav__link">Contact</a></li>
+                           </ul>
+                        </div>
+                     </li>
                   </ul>
                </nav>
                <div class="header__active">
@@ -54,11 +67,11 @@
                </div>
             </div>
          </section>
-         <section class="page2 specialized">
+         <section id="serv" class="page2 specialized">
             <div class="specialized__container">
                <div class="specialized__beginning">
                   <div class="title">
-                     <div id="serv" class="title__info">SERVICES</div>
+                     <div class="title__info">SERVICES</div>
                      <h2 class="title__title">Specialized in</h2>
                   </div>
                </div>
@@ -87,11 +100,11 @@
                </div>
             </div>
          </section>
-         <section class="page3 works">
+         <section id="port" class="page3 works">
             <div class="works__container">
                <div class="works__beggining">
                   <div class="title">
-                     <div class="title__info" id="port">MY WORKS</div>
+                     <div class="title__info">MY WORKS</div>
                      <h2 class="works__title title__title">Featured Portfolios</h2>
                   </div>
                   <div class="works__controls">
@@ -177,11 +190,11 @@
                </div>
             </div>
          </section>
-         <section class="page4 exp">
+         <section id="exp" class="page4 exp">
             <div class="exp__container">
                <div class="exp__start">
                   <div class="title">
-                     <div class="title__info" id="exp">career path</div>
+                     <div class="title__info">career path</div>
                      <h2 class="exp__title title__title">Work Experices</h2>
                   </div>
                   <aside class="exp__company">
@@ -199,7 +212,8 @@
                   <div class="company-body">
                      <div class="company-body__content active">
                         <div class="company-body__about">
-                           <div class="company-body__position">Front-end Developer <span>Apple .Inc</span></div>
+                           <div class="company-body__position">Front-end Developer <span><a href="#">Apple
+                                    .Inc</a></span></div>
                            <div class="company-body__place">California, United States
                            </div>
                            <div class="company-body__time">Nov 2020 - Present · Full-time
@@ -223,7 +237,8 @@
                      </div>
                      <div class="company-body__content">
                         <div class="company-body__about">
-                           <div class="company-body__position">Front-end Developer <span>Microsoft</span></div>
+                           <div class="company-body__position">Front-end Developer <span><a
+                                    href="#">Microsoft</a></span></div>
                            <div class="company-body__place">California, United States
                            </div>
                            <div class="company-body__time">Nov 2020 - Present · Full-time
@@ -247,7 +262,8 @@
                      </div>
                      <div class="company-body__content">
                         <div class="company-body__about">
-                           <div class="company-body__position">Front-end Developer <span>Facebook</span></div>
+                           <div class="company-body__position">Front-end Developer <span><a href="#">Facebook</a></span>
+                           </div>
                            <div class="company-body__place">California, United States
                            </div>
                            <div class="company-body__time">Nov 2020 - Present · Full-time
@@ -271,7 +287,8 @@
                      </div>
                      <div class="company-body__content">
                         <div class="company-body__about">
-                           <div class="company-body__position">Front-end Developer <span>Slack</span></div>
+                           <div class="company-body__position">Front-end Developer <span><a href="#">Slack</a></span>
+                           </div>
                            <div class="company-body__place">California, United States
                            </div>
                            <div class="company-body__time">Nov 2020 - Present · Full-time
@@ -297,51 +314,53 @@
                </div>
             </div>
          </section>
-         <section class="page5 blog">
+         <section id="blog" class="page5 blog">
             <div class="blog__container">
                <div class="title">
-                  <div class="title__info" id="blog">MY ARTICLES</div>
+                  <div class="title__info">MY ARTICLES</div>
                   <h2 class="title__title">Personal Blog</h2>
                </div>
                <div class="blog__posts blog-post">
                   <div class="blog-post__items">
                      <div class="blog-post__item">
-                        <div class="blog-post__img"><img src="IMG/Blog/1.jpg" alt=""></div>
+                        <a href="#" class="blog-post__img"><img src="IMG/Blog/1.jpg" alt=""></a>
                         <div class="blog-post__content">
-                           <h2 class="blog-post__name">How to prototype in figma
+                           <a href="#"><h2 class="blog-post__name">How to prototype in figma</h2></a>
                            </h2>
                            <div class="blog-post__date affiliation">July 15, 2021
                            </div>
-                           <div class="blog-post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...
+                           <div class="blog-post__text">
+                              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante
+                                 scelerisque laoreet. Fusce finibus ...</p></a>
                            </div>
                         </div>
                         <a href="#" class="blog-post__continue">Continue Reading</a>
                      </div>
                      <div class="blog-post__item">
-                        <div class="blog-post__img"><img src="IMG/Blog/2.jpg" alt=""></div>
+                        <a href="#" class="blog-post__img"><img src="IMG/Blog/2.jpg" alt=""></a>
                         <div class="blog-post__content">
-                           <h2 class="blog-post__name">Being more productive with Notion.
-
-                           </h2>
+                           <a href="#"><h2 class="blog-post__name">Being more productive with Notion.</h2></a>
                            <div class="blog-post__date affiliation">Aug 8, 2020
 
                            </div>
-                           <div class="blog-post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...
+                           <div class="blog-post__text">
+                              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante
+                                 scelerisque laoreet. Fusce finibus ...</p></a>
 
                            </div>
                         </div>
                         <a href="#" class="blog-post__continue">Continue Reading</a>
                      </div>
                      <div class="blog-post__item">
-                        <div class="blog-post__img"><img src="IMG/Blog/3.jpg" alt=""></div>
+                        <a href="#" class="blog-post__img"><img src="IMG/Blog/3.jpg" alt=""></a>
                         <div class="blog-post__content">
-                           <h2 class="blog-post__name">Beginners guide to adobe illustrator
-
-                           </h2>
+                           <a href="#"><h2 class="blog-post__name">Beginners guide to adobe illustrator</h2></a>
                            <div class="blog-post__date affiliation">Feb 19, 2021
 
                            </div>
-                           <div class="blog-post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...
+                           <div class="blog-post__text">
+                              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante
+                                 scelerisque laoreet. Fusce finibus ...</p></a>
                            </div>
                         </div>
                         <a href="#" class="blog-post__continue">Continue Reading</a>
@@ -350,7 +369,7 @@
                </div>
             </div>
          </section>
-         <section class="page6 clients">
+         <section id="clients" class="page6 clients">
             <div class="clients__container">
                <div class="title">
                   <div class="title__info">MY CLIENTS</div>
@@ -361,7 +380,8 @@
                      <div class="body-clients__item">
                         <div class="body-clients__img"><img src="IMG/Clients/1.png" alt=""></div>
                         <div class="body-clients__content">
-                           <div class="body-clients__text">We were very pleased to hear how you resolved our website's user interface issues and challenges.
+                           <div class="body-clients__text">We were very pleased to hear how you resolved our website's
+                              user interface issues and challenges.
                            </div>
                            <div class="body-clients__name">Amelia Miller</div>
                            <div class="body-clients__position affiliation">Designer</div>
@@ -370,7 +390,8 @@
                      <div class="body-clients__item">
                         <div class="body-clients__img"><img src="IMG/Clients/2.png" alt=""></div>
                         <div class="body-clients__content">
-                           <div class="body-clients__text">I’m glad I decided to work with you. The project was delivered on time with all the requirements.
+                           <div class="body-clients__text">I’m glad I decided to work with you. The project was
+                              delivered on time with all the requirements.
 
                            </div>
                            <div class="body-clients__name">James Delaney
@@ -381,7 +402,8 @@
                      <div class="body-clients__item">
                         <div class="body-clients__img"><img src="IMG/Clients/3.png" alt=""></div>
                         <div class="body-clients__content">
-                           <div class="body-clients__text">The management of our projects was always faced with difficulties, but you handled these well.
+                           <div class="body-clients__text">The management of our projects was always faced with
+                              difficulties, but you handled these well.
 
                            </div>
                            <div class="body-clients__name">Isabella Bennett</div>
@@ -392,7 +414,7 @@
                </div>
             </div>
          </section>
-         <section class="page7 skills">
+         <section id="skills" class="page7 skills">
             <div class="skills__container">
                <div class="title">
                   <div class="title__info">SERVICES</div>
@@ -419,7 +441,9 @@
                      </div>
                   </div>
                   <div class="skills-static">
-                     <div class="skills-static__text">For 5+ years, I have been continuously learning in the field of front-end and experimenting with new technologies and frameworks, and here you can see a summary of my skills.
+                     <div class="skills-static__text">For 5+ years, I have been continuously learning in the field of
+                        front-end and experimenting with new technologies and frameworks, and here you can see a summary
+                        of my skills.
                      </div>
                      <div class="skills-static__items">
                         <div class="skills-static__item">
@@ -445,13 +469,13 @@
                </div>
             </div>
          </section>
-         <section class="page8 form">
+         <section id="contact" class="page8 form">
             <div class="form__container">
                <div class="form__body">
-                  <form action="#" method="get" class="form__forms">
-                     <input class="form__body-name input" type="text" placeholder="Name">
-                     <input class="form__body-email input" type="email" placeholder="Email">
-                     <textarea class="form__body-textarea input" placeholder="Message"></textarea>
+                  <form id="form" action="#" method="post" class="form__forms">
+                     <input class="form__body-name input _req" type="text" placeholder="Name">
+                     <input class="form__body-email input _req _email" type="email" placeholder="Email">
+                     <textarea class="form__body-textarea input" maxlength="450" placeholder="Message"></textarea>
                      <button class="form__body-btn" type="submit">Send Message</button>
                   </form>
                   <div class="form__contact contact-form">
@@ -490,7 +514,7 @@
             <a href="#" class="footer__social-link _icon-X"></a>
             <a href="#" class="footer__social-link _icon-link"></a>
          </div>
-         <span class="footer__copy">© 2022  -  DevChapter</span>
+         <span class="footer__copy">© 2022 - DevChapter</span>
       </footer>
    </div>
    <script src="js/swiper.js"></script>

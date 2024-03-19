@@ -78,6 +78,9 @@
 .swiper {
    position: relative;
    z-index: 0 !important;
+   @media(max-width:600.98px){
+      overflow: visible;
+   }
 }
 
 .item-works {
@@ -93,10 +96,10 @@
          border-radius: 0.5rem;
       }
       @media (min-width: 767.98px) {
-         .item-works__name::before {
+         .item-works__content::before {
             transition: all 0.8s ease 0s;
-            width: 100%;
-            height: 200%;
+            width: 124%;
+            height: 101%;
             z-index: -1;
          }
          .item-works__name {
@@ -139,31 +142,32 @@
       border-left: 1px solid rgb(245, 245, 245);
       border-right: 1px solid rgb(245, 245, 245);
       border-radius: 0px 0px 0.35rem 0.35rem;
+      @media (min-width: 767.98px) {
+         &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 91%;
+            left: -40%;
+            top: 0%;
+            transform: translate(0, -50%);
+            background: $purple;
+            border-radius: 0px 0px 0.35rem 0.35rem;
+            transition: all 0.8s ease 0s;
+            z-index: -1;
+            transform: skewX(-45deg);
+         }
+      }
    }
 
    &__name {
-      padding: 5px;
+      padding: 0.3125rem;
       color: rgb(35, 46, 53);
       font-family: "Plus Jakarta Sans";
       font-weight: 500;
       line-height: 1.25;
       overflow: hidden;
       transition: all 0.8s ease 0s;
-      @media (min-width: 767.98px) {
-         &:before {
-            content: "";
-            position: absolute;
-            width: 0%;
-            height: 0%;
-            left: 0;
-            top: 100%;
-            transform: translate(0, -50%);
-            background: $purple;
-            border-radius: 0px 0px 0.35rem 0.35rem;
-            transition: all 0.8s ease 0s;
-            z-index: -1;
-         }
-      }
    }
 
    &__footer {

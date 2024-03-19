@@ -1,4 +1,10 @@
-.main {
+
+::selection{
+   background: #6b5efa;
+   color: #fff;
+}
+
+.main{
    flex: 1 1 auto;
 }
 .page1 {
@@ -100,26 +106,6 @@
          border-radius: 16px;
          rotate: -9.55deg;
          z-index: -1;
-         animation: rotate 1.5s ease-in infinite alternate;
-         @keyframes rotate {
-            from {
-               rotate: -9.55deg;
-            }
-            to {
-               rotate: 9.55deg;
-            }
-         }
-         @media (max-width: 467.98px) {
-            rotate: -3deg;
-            @keyframes rotate {
-               from {
-                  rotate: -3deg;
-               }
-               to {
-                  rotate: 3deg;
-               }
-            }
-         }
       }
       img {
          padding: 6.5625rem 5.0625rem 0px 0px;

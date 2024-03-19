@@ -6,11 +6,11 @@
    top: 0;
    left: 0;
    width: 100%;
-   z-index: 1;
+   z-index: 100;
    background: rgba(255, 255, 255, 0.6);
+   padding: clamp( 1.25rem , 0.7727272727rem  +  2.3863636364vw , 2.5625rem ) 0px;
+   @include adClamp("height", 123, 83);
    &__container {
-      padding: clamp( 1.25rem , 0.7727272727rem  +  2.3863636364vw , 2.5625rem ) 15px;
-      @include adClamp("height", 123, 83);
    }
 
    &__content {
@@ -139,28 +139,13 @@
    }
 }
 
-.header.active{
-   @media(min-width:768.98px){
-   transition: all .7s ease 0s;
-   top: -8.2125rem;
-   & .header__active.active{
-      transition: all .7s ease 0s;
-      margin-top: 7.8125rem;
-   }
-   & .header__logo{
-      transition: all .7s ease 0s;
-      opacity: 0;
-   }
-}
-}
-
-
 .nav {
 
    &__items {
       display: flex;
       @include adClamp("gap", 56, 28, 1200, 768);
       flex-wrap: wrap;
+      align-items: center;
       @media(max-width:767.98px){
          position: fixed;
          width: 0%;
@@ -223,17 +208,83 @@
       @media(max-width:767.98px){
          text-align: right;
       }
+      &._underline .nav__link:before{
+         transition: all .3s ease 0s;
+         width: 100%;
+         opacity: 1;
+         left: 0;
+         bottom: -0.125rem;
+         @media(max-width:767.98px){
+            background: #fff;
+         }
+      }
+   }
+
+
+   &__menu{
+      @media(max-width:767.98px){
+         display: none;
+      }
+      position: relative;
+      &:before,&:after{
+         content: '';
+         position: absolute;
+         width: 3px;
+         height: 3px;
+         border-radius: 50%;
+         left: calc( 50% - 8px);
+         top: 50%;
+         background: #130F26;
+         transition: all .3s ease 0.15s;
+         overflow: hidden;
+      }
+      &:after{
+         left: calc( 50% + 8px);
+      }
+      span{
+         position: absolute;
+         border-radius: 50%;
+         width: 3px;
+         height: 3px;
+         left: 50%;
+         top: 50%;
+         background: #130F26;
+         overflow: hidden;
+      }
+   }
+
+   &__pod-menu{
+      position: relative;
+      @media(min-width:767.98px){
+         padding: 15px;
+         cursor: pointer;
+         &:hover .nav-submenu__content{
+            transition: all 1.2s ease 0s;
+            height: 140px;
+         }
+         &:hover .nav__menu:before{
+            top: 0px;
+            left: 50%;
+            transition: all .3s ease 0s;
+         }
+         &:hover .nav__menu:after{
+            top: 0px;
+            left: 50%;
+            transition: all .3s ease 0s;
+         }
+      }
    }
 
    &__link {
+      color: #232E35;
       position: relative;
       &:before{
          content: '';
          position: absolute;
          width: 0%;
-         height: 0.0938rem;
+         height: 0.125rem;
          left: 50%;
-         bottom: 0.125rem;
+         bottom: 0.1563rem;
          background: $purple;
          transition: all .3s ease 0s;
          opacity: 0;
@@ -245,7 +296,6 @@
          left: 0;
          bottom: -0.125rem;
       }
-      
       @media(max-width:767.98px){
          color: #fff;
          @include adClamp("font-size", 36, 24, 768, 320);
@@ -253,6 +303,75 @@
             color: rgba(0, 0, 0,0.6);
             transition: all .3s ease 0s;
          }
+      }
+   }
+}
+
+.nav-submenu {
+
+   &__content {
+      transition: all 0.9s ease 0.15s;
+      height: 0px;
+      overflow: hidden;
+      padding-top: 25px;
+      left: -25px;
+      top: 10px;
+      z-index: 3;
+      @media(min-width:767.98px){
+         position: absolute;
+      }
+      @media(max-width:767.98px){
+         height: 300px;
+         padding: 0;
+         top: 0;
+      }
+   }
+
+   &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+      background: $purple;
+      border-radius: 15px;
+      @media(max-width:767.98px){
+         row-gap: 3.125rem;
+         text-align: center;
+      }
+   }
+
+   &__item{
+      &._underline .nav-submenu__link:before{
+         transition: all .3s ease 0s;
+         width: 100%;
+         opacity: 1;
+         left: 0;
+         bottom: -0.125rem;
+         background: #fff;
+      }
+   }
+
+   &__link {
+      color: #fff;
+      transition: all .3s ease 0s;
+      &:hover{
+         transition: all .3s ease 0s;
+         color: #c3c3c3;
+         @media(max-width:767.98px){
+            color: rgba(0, 0, 0,0.6);
+         }
+      }
+      position: relative;
+      &:before{
+         content: '';
+         position: absolute;
+         width: 0%;
+         height: 0.125rem;
+         left: 50%;
+         bottom: 0.1563rem;
+         background: $purple;
+         transition: all .3s ease 0s;
+         opacity: 0;
       }
    }
 }
