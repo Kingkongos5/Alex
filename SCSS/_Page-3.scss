@@ -101,6 +101,7 @@
             width: 124%;
             height: 101%;
             z-index: -1;
+            box-shadow: 0px 0px 5px #000;
          }
          .item-works__name {
             a {
@@ -156,6 +157,7 @@
             transition: all 0.8s ease 0s;
             z-index: -1;
             transform: skewX(-45deg);
+            box-shadow: 0px 0px 0px #000;
          }
       }
    }
