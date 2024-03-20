@@ -9,6 +9,20 @@
    font-size: 0.875rem;
    line-height: 1.2142;
    border: 3px solid transparent;
+   @media(min-width:767.98px){
+      @for $i from 1 through 3{
+         &:nth-child(#{$i}){
+            transition: all 0.4s linear #{-0.33 + ($i / 3)}s;
+         }
+      }
+   }
+   @media(max-width:767.98px){
+      @for $i from 1 through 3{
+         &:nth-child(#{$i}){
+            transition: all 0.4s linear #{0.5 + ($i / 3)}s;
+         }
+      }
+   }
    &:focus {
       border: 3px solid #000;
    }
@@ -104,6 +118,12 @@
       @media (max-width: 767.98px) {
          width: 100%;
       }
+      &.anim .input{
+         scale: 0;
+      }
+      &.anim .form__body-btn{
+         scale: 0;
+      }
    }
 
    &__body-btn {
@@ -112,13 +132,36 @@
       background: rgb(126, 116, 241);
       padding: 1rem 1.5rem;
       color: #fff;
-      transition: all 0.3s ease 0s;
+      transition: all 0.6s ease 0s;
       min-height: 52.8px;
-      &:hover {
-         transition: all 0.3s ease 0s;
-         background: rgb(96, 81, 255);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      &:before{
+         content: '';
+         position: absolute;
+         width: 0%;
+         height: 100%;
+         left: 50%;
+         top: 0;
+         transform: skewX(-90deg);
+         background: transparent;
+         transition: all 0.8s ease 0s;
+         z-index: -1;
+      }
+      &:hover:before {
+         transition: all 1s ease 0s;
+         background: #a708d7;
+         width: 100%;
+         left: 0;
+         transform: skewX(0deg);
       }
       &._submit {
+         &:before{
+            transition: all .4s ease 0s;
+            width: 0%;
+            left: 50%;
+         }
          animation: bg 1s ease alternate;
          @keyframes bg {
             from {
@@ -135,6 +178,11 @@
          }
       }
       &._err {
+         &:before{
+            transition: all .4s ease 0s;
+            width: 0%;
+            left: 50%;
+         }
          animation: bgerr 1s ease alternate;
          @keyframes bgerr {
             from {
@@ -192,11 +240,29 @@
          flex-direction: row;
          flex-wrap: wrap;
       }
+      &.anim .contact-form__item{
+         scale: 0;
+      }
    }
 
    &__item {
       display: flex;
       gap: 1rem;
+      scale: 1;
+      @media(min-width:767.98px){
+         @for $i from 1 through 3{
+            &:nth-child(#{$i}){
+               transition: all 0.4s linear #{0.5 + ($i / 3)}s;
+            }
+         }
+      }
+      @media(max-width:767.98px){
+         @for $i from 1 through 3{
+            &:nth-child(#{$i}){
+               transition: all 0.4s linear #{-0.33 + ($i / 3)}s;
+            }
+         }
+      }
       &:hover {
          transition: all 0.3s ease 0s;
          a {

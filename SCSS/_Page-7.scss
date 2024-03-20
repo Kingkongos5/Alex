@@ -27,6 +27,12 @@
       flex-direction: column;
       @include adClamp("gap", 64, 24);
       position: relative;
+      height: 100%;
+      transition: all 3s ease 0s;
+      overflow: hidden;
+      &.anim {
+         height: 0%;
+      }
       &:before {
          content: "";
          position: absolute;
@@ -70,10 +76,29 @@
 .skills-static {
    flex: 0 1 48.666667%; /* 584/1200 */
    @include adClamp("margin-top", 35, 25);
+   &.anim {
+      .skills-static__text {
+         transform: translateX(-15%);
+         opacity: 0;
+      }
+      .skills-static__name{
+         transform: translateX(-15%);
+         opacity: 0;
+      }
+      .skills-static__item{
+         &:nth-child(1) {span {width: 0%;}}
+         &:nth-child(2) {span {width: 0%;}}
+         &:nth-child(3) {span {width: 0%;}}
+      }
+      .skills-static__value{
+         max-width: 0%;
+      }
+   }
    &__text {
       margin-bottom: 4rem;
       color: rgb(101, 109, 114);
       line-height: 2;
+      transition: all 0.8s ease 0.6s;
    }
 
    &__items {
@@ -83,6 +108,48 @@
    }
 
    &__item {
+      @for $i from 1 through 3{
+         &:nth-child(#{$i}) .skills-static__name{
+            transition: all 0.4s linear #{0.6 + ($i / 3)}s;
+         }
+      }
+      @media(max-width:767.98px){
+         @for $i from 1 through 3{
+            &:nth-child(#{$i}) .skills-static__name{
+               transition: all 0.4s linear #{0.3 + ($i / 3)}s;
+            }
+         }
+      }
+      @for $i from 1 through 3{
+         &:nth-child(#{$i}) .skills-static__value{
+            transition: all 0.4s linear #{0.3 + ($i / 3)}s;
+         }
+      }
+      @media(max-width:767.98px){
+         @for $i from 1 through 3{
+            &:nth-child(#{$i}) .skills-static__value{
+               transition: all 0.4s linear #{0 + ($i / 3)}s;
+            }
+         }
+      }
+      &:nth-child(1) {
+         span {
+            transition: all 0.4s linear 1s;
+            width: 68.60254%;
+         }
+      }
+      &:nth-child(2) {
+         span {
+            transition: all 0.4s linear 1.3s;
+            width: 51.905626%;
+         }
+      }
+      &:nth-child(3) {
+         span {
+            transition: all 0.4s linear 1.6s;
+            width: 63.883848%;
+         }
+      }
    }
 
    &__name {
@@ -97,18 +164,19 @@
       max-width: 34.4375rem;
       height: 8px;
       position: relative;
-      background: #F5F3FE;
+      background: #f5f3fe;
       border-radius: 2px;
       overflow: hidden;
-      span{
+      span {
          position: absolute;
          height: 0.5rem;
          left: 0;
          top: 0;
          background: $purple;
          overflow: hidden;
-         &:before,&:after{
-            content: '';
+         &:before,
+         &:after {
+            content: "";
             position: absolute;
             width: 4rem;
             height: 80%;
@@ -118,22 +186,22 @@
             border-radius: 50%;
             background: #aea9e7dc;
             animation: translate 3s cubic-bezier(0.13, 0.56, 1, 0.38) infinite;
-            @keyframes translate{
-               from{
+            @keyframes translate {
+               from {
                   left: -15%;
                }
-               to{
+               to {
                   left: 100%;
                }
             }
          }
-         &::after{
+         &::after {
             animation: translate 5s linear infinite;
-            @keyframes translate{
-               from{
+            @keyframes translate {
+               from {
                   left: -15%;
                }
-               to{
+               to {
                   left: 100%;
                }
             }

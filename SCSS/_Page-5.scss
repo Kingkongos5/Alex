@@ -18,10 +18,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      @include adClamp("gap", 40, 15);;
+      @include adClamp("gap", 40, 15);
+      transform: translateY(0);
+      &.anim .blog-post__item {
+         transform: translateY(50%);
+         opacity: 0;
+      }
    }
 
    &__item {
+      @for $i from 1 through 3{
+         &:nth-child(#{$i}) {
+            transition: all 0.4s linear #{$i / 8}s;
+         }
+      }
       max-width: 361px;
       border-bottom: 1px solid rgb(241, 241, 241);
       border-left: 1px solid rgb(241, 241, 241);

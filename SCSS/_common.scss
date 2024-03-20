@@ -72,6 +72,7 @@
       position: relative;
       padding-left: 2rem;
       text-transform: uppercase;
+      transition: all .3s ease 0.2s;
       &:before {
          content: "";
          position: absolute;
@@ -79,8 +80,17 @@
          height: 0.125rem;
          left: -0rem;
          top: 50%;
+         opacity: 1;
          transform: translate(0, -50%);
          background: rgb(217, 217, 217);
+         transition: all .3s ease 0.4s;
+      }
+      &.anim{
+         transform: translateX(-3.25rem);
+         &::before{
+            left: -1.5625rem;
+            opacity: 0;
+         }
       }
    }
    &__title {
@@ -90,8 +100,19 @@
       line-height: 1.731;
       letter-spacing: 0;
       @include adClamp("font-size", 36, 28);
+      transition: all 0.6s cubic-bezier(0, 0.05, 1, 1.22) 0.3s;
+      transform: translateX(0px);
+      opacity: 1;
       span {
          color: $purple;
+      }
+      &.anim{
+         transform: translateX(40px);
+         opacity: 0;
+      }
+      &.anim.lh{
+         transform: translateX(80px);
+         letter-spacing: 5px;
       }
    }
 }

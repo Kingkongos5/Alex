@@ -2,7 +2,7 @@
 
 .header {
    position: fixed;
-   transition: all .7s ease 0s;
+   transition: all 0.4s $cubic 0.3s;
    top: 0;
    left: 0;
    width: 100%;
@@ -10,7 +10,8 @@
    background: rgba(255, 255, 255, 0.6);
    padding: clamp( 1.25rem , 0.7727272727rem  +  2.3863636364vw , 2.5625rem ) 0px;
    @include adClamp("height", 123, 83);
-   &__container {
+   &.anim{
+      top: -5%;
    }
 
    &__content {
@@ -18,6 +19,9 @@
       justify-content: space-between;
       align-items: center;
       gap: 15px;
+      @media(max-width:319.98px){
+         gap: 3px;
+      }
    }
 
    &__logo {
@@ -25,6 +29,10 @@
       &:hover{
          transform: translate(0px,-3px);
          transition: all .3s linear 0s;
+      }
+      @media(max-width:319.98px){
+         overflow: hidden;
+         flex: 0 0 50px;
       }
    }
 

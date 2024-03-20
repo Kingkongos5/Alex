@@ -1,10 +1,9 @@
-
-::selection{
+::selection {
    background: #6b5efa;
    color: #fff;
 }
 
-.main{
+.main {
    flex: 1 1 auto;
 }
 .page1 {
@@ -38,6 +37,12 @@
       font-weight: 400;
       line-height: 2;
       letter-spacing: 0rem;
+      position: relative;
+      transition: all 0.3s $cubic 0.5s;
+      &.anim {
+         transform: translateX(-30px);
+         opacity: 0;
+      }
    }
 
    &__social {
@@ -47,6 +52,7 @@
    &__social-link {
       position: relative;
       top: 0;
+      left: 0;
       font-family: "Plus Jakarta Sans";
       font-size: 1.25rem;
       color: #000;
@@ -55,28 +61,44 @@
       &:not(:last-child) {
          @include adClamp("margin-right", 35, 20);
       }
-      &:nth-child(1):hover {
-         transition: all 0.3s ease 0s;
-         position: relative;
-         top: -5px;
-         color: #e86c06;
+      &.anim {
+         left: -30px;
+         opacity: 0;
       }
-      &:nth-child(2):hover {
-         transition: all 0.3s ease 0s;
-         position: relative;
-         top: -5px;
+      &:nth-child(1) {
+         transition: all 0.3s $cubic 0.3s;
+         &:hover {
+            transition: all 0.3s ease 0s;
+            position: relative;
+            top: -5px;
+            color: #e86c06;
+         }
       }
-      &:nth-child(3):hover {
-         transition: all 0.3s ease 0s;
-         position: relative;
-         top: -5px;
-         color: #0699e8;
+      &:nth-child(2) {
+         transition: all 0.3s $cubic 0.4s;
+         &:hover {
+            transition: all 0.3s ease 0s;
+            position: relative;
+            top: -5px;
+         }
       }
-      &:nth-child(4):hover {
-         transition: all 0.3s ease 0s;
-         position: relative;
-         top: -5px;
-         color: #066ce8;
+      &:nth-child(3) {
+         transition: all 0.3s $cubic 0.5s;
+         &:hover {
+            transition: all 0.3s ease 0s;
+            position: relative;
+            top: -5px;
+            color: #0699e8;
+         }
+      }
+      &:nth-child(4) {
+         transition: all 0.3s $cubic 0.6s;
+         &:hover {
+            transition: all 0.3s ease 0s;
+            position: relative;
+            top: -5px;
+            color: #066ce8;
+         }
       }
    }
 
@@ -85,6 +107,7 @@
       flex: 0 1 50%;
       justify-content: end;
       position: relative;
+      transition: all .4s $cubic 0.3s;
       &:after {
          content: "";
          position: absolute;
@@ -106,17 +129,29 @@
          border-radius: 16px;
          rotate: -9.55deg;
          z-index: -1;
+         transition: all .75s $cubic 0.2s;
       }
-      img {
-         padding: 6.5625rem 5.0625rem 0px 0px;
-         border-radius: 16px;
-         background: rgb(234, 230, 254);
-         @media (max-width: 767.98px) {
-            max-width: 100%;
+      &.anim{
+         transform: translate(25%,0);
+         opacity: 0;
+         &:before{
+            transform: translate(20%,0);
+            rotate: 0deg;
          }
       }
    }
    &__img {
+      padding: 6.5625rem 5.0625rem 0px 0px;
+      border-radius: 16px;
+      background: rgb(234, 230, 254);
+      overflow: hidden;
+      img {
+         max-width: 100%;
+         transition: all .6s $cubic 0.5s;
+      }
+      &.anim img{
+         transform: translateY(50px);
+      }
    }
 }
 .alex-content {

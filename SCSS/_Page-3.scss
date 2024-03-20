@@ -27,8 +27,13 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      transition: all .8s ease 0s;
       @media (max-width: 467.98px) {
          justify-content: center;
+      }
+      &.anim{
+         opacity: 0;
+         transform: translateX(-50%);
       }
    }
 
@@ -67,11 +72,16 @@
    &__wrapper {
       display: flex;
    }
+}
 
-   &__slide {
-   }
 
-   &__item {
+.work{
+   width: 100%;
+   transition: opacity 2s ease 0s;
+   transition: all 1.6s ease 0.1s;
+   &.anim{
+      width: 0%;
+      opacity: 0;
    }
 }
 
