@@ -63,7 +63,7 @@ function tabsBtn(e) {
    }
 }
 
-// Forms =================================
+// Forms Validate =================================
 
 addEventListener("DOMContentLoaded", function () {
    const form = document.getElementById('form')
@@ -185,22 +185,14 @@ document.querySelectorAll('section').forEach((section) => {
 });
 
 const animation = new IntersectionObserver((entries) => {
-   console.log(entries);
    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-         console.log(entry);
          entry.target.classList.remove('anim')
          animation.unobserve(entry.target)
-         console.log(entry);
       }
    });
 }, {
    threshold: [0.25]
 })
 
-document.querySelectorAll('.title__info, .title__title, .header, .alex__text, .alex__social-link, .alex__img, .alex__images, .specialized__column, .work').forEach((addAnim) =>{
-   animation.observe(addAnim);
-});
-document.querySelectorAll('.works__controls, .exp__company, .company-body, .blog-post__items, .body-clients__items, .skills-myway__items, .skills-static, .contact-form__items, .form__forms').forEach((addAnim) =>{
-   animation.observe(addAnim);
-});
+document.querySelectorAll('.anim').forEach((addAnim) => animation.observe(addAnim));
