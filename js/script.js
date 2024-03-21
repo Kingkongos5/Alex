@@ -15,7 +15,7 @@ function openBurger(e) {
       burger.classList.toggle('active');
       nav.classList.toggle('active');
    }
-   if (((!e.target.closest('.header__burger') && (!e.target.closest('.nav__items'))) || e.target.closest('.nav__item'))) {
+   if (((!e.target.closest('.header__burger') && (!e.target.closest('.nav__items'))) || e.target.closest('.nav__item') || e.target.closest('.nav-submenu__item'))) {
       burger.classList.remove('active');
       nav.classList.remove('active');
    }
