@@ -67,40 +67,53 @@
          @media(max-width:767.98px){
             left: -10px;
          }
+         &:nth-child(1){
+            @media(max-width:467.98px){
+               left: 0;
+            opacity: 1;
+            }
+         }
       }
       &:nth-child(1) {
-         transition: all 0.3s $cubic 0.3s;
+         transition: all 0.4s $cubic 0s;
          &:hover {
-            transition: all 0.3s ease 0s;
+            transition: all 0.5s ease 0s;
             position: relative;
             top: -5px;
             color: #e86c06;
          }
       }
       &:nth-child(2) {
-         transition: all 0.3s $cubic 0.4s;
+         transition: all 0.4s $cubic 0s;
          &:hover {
-            transition: all 0.3s ease 0s;
+            transition: all 0.5s ease 0s;
             position: relative;
             top: -5px;
          }
       }
       &:nth-child(3) {
-         transition: all 0.3s $cubic 0.5s;
+         transition: all 0.4s $cubic 0s;
          &:hover {
-            transition: all 0.3s ease 0s;
+            transition: all 0.5s ease 0s;
             position: relative;
             top: -5px;
             color: #0699e8;
          }
       }
       &:nth-child(4) {
-         transition: all 0.3s $cubic 0.6s;
+         transition: all 0.4s $cubic 0s;
          &:hover {
-            transition: all 0.3s ease 0s;
+            transition: all 0.5s ease 0s;
             position: relative;
             top: -5px;
             color: #066ce8;
+         }
+      }
+      &.time{
+         @for $i from 1 through 4{
+            &:nth-child(#{$i}){
+               transition: all .3s $cubic #{0.2 + $i / 10}s;
+            }
          }
       }
    }

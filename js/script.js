@@ -188,6 +188,12 @@ const animation = new IntersectionObserver((entries) => {
    entries.forEach((entry) => {
       if (entry.isIntersecting) {
          entry.target.classList.remove('anim')
+         if (entry.target.classList.length > 2){
+            console.log('time removed');
+            setTimeout(function (){
+               entry.target.classList.remove('time')
+            }, 1000)
+         }
          animation.unobserve(entry.target)
       }
    });
