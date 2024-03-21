@@ -684,6 +684,11 @@ body {
   left: -30px;
   opacity: 0;
 }
+@media (max-width: 767.98px) {
+  .alex__social-link.anim {
+    left: -10px;
+  }
+}
 .alex__social-link:nth-child(1) {
   transition: all 0.3s cubic-bezier(0, 0.05, 1, 1.22) 0.3s;
 }

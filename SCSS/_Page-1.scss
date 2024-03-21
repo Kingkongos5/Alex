@@ -64,6 +64,9 @@
       &.anim {
          left: -30px;
          opacity: 0;
+         @media(max-width:767.98px){
+            left: -10px;
+         }
       }
       &:nth-child(1) {
          transition: all 0.3s $cubic 0.3s;
