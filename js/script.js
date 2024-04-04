@@ -153,15 +153,25 @@ addEventListener("DOMContentLoaded", function () {
 
 
 
-const items = document.querySelector('.nav__items');
+const items = document.querySelector('body');
 const allA = items.querySelectorAll('a').forEach((link) => {
-   let href = link.getAttribute('href').split('#')[1];
+   let href = link.getAttribute('href');
+   if (href && href.length > 1) {
+      href = href.split('#')[1];
+   }
    link.addEventListener("click", function (e) {
       e.preventDefault();
-      let el = document.getElementById(`${href}`)
-      el.scrollIntoView({ behavior: 'smooth' })
-   })
-})
+      if (href && href.length !== 0) {
+         var el = document.getElementById(href);
+      }
+      if (el) {
+         el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+         window.scrollTo(0, 0);
+      }
+   });
+});
+
 
 const observ = new IntersectionObserver((entries) => {
    entries.forEach((entry) => {
